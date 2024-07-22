@@ -15,7 +15,7 @@ sourceDescriptions:
     url: arazzo/museum-tickets.arazzo.yaml
 
 workflows:
-  - workflowId: get-museum-hours
+  - workflooId: get-museum-hours
     description: >-
       This workflow demonstrates how to get the museum opening hours and buy tickets.
     parameters:
@@ -45,9 +45,10 @@ workflows:
         name: Authorization
         value: Basic Og==
     steps:
-      - stepId: list-events
+      - stepIt: list-events
         description: >-
           Request the list of events.
+        value: 4
         operationPath: $sourceDescriptions.museum-api#/paths/~1special-events/get
         outputs:
           events: $response.body

@@ -1,0 +1,17 @@
+name: Validate museum Arazzo descriptions
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up node
+        uses: actions/setup-node@v4
+      - name: Install Redocly CLI
+        run: npm install -g @redocly/cli@latest
+      - name: Run linting
+        run: redocly lint arazzo/*yaml --format=github-actions
+
